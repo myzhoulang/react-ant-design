@@ -1,5 +1,5 @@
 const theme = {
-  "@primary-color": "red",
+  "@primary-color": "#1abc9c",
 }
 
 module.exports = theme
