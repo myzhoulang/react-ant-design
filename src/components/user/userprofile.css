@@ -1,0 +1,38 @@
+.userprofile {
+    font-size: 14px;
+    position: relative;
+}
+
+.userprofile .menu {
+    transition: all .3s ease-in-out;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 20px);
+    width: 17em;
+}
+
+.userprofile .ant-menu-item {
+    color: #666;
+    font-size: 16px;
+    transition: all .3s ease-in-out;
+}
+
+.userprofile .ant-menu-item:hover {
+  color: #1abc9c;
+  background: #f1f1f1;
+  padding-left: 24px;
+}
+
+.fade-leave.fade-leave-active, .fade-enter {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active, .fade-leave {
+  opacity: 1;
+}
+
+/* .userprofile:hover .menu {
+    top: 56px;
+    opacity: 1;
+    display: block;
+} */
