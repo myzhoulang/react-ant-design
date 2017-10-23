@@ -1,0 +1,12 @@
+#header .ant-avatar .anticon-user {
+  margin-right: 0; }
+
+#header .actions li {
+  transition: transform .6s; }
+  #header .actions li:hover {
+    transform: translateX(10px); }
+
+#header .actions .ant-menu-item-group-title {
+  overflow: hidden;
+  height: 0;
+  padding: 0; }

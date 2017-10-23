@@ -1,14 +1,8 @@
 import React from 'react'
 import { Menu, Icon } from 'antd'
-import logo from '../logo.png'
 
 const SubMenu = Menu.SubMenu
-const MenuItemGroup = Menu.ItemGroup
-
 class Mainnav extends React.Component {
-  constructor(arg) {
-    super(arg)
-  }
   render() {
     return (
       <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" >

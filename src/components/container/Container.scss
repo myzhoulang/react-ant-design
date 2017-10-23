@@ -1,0 +1,29 @@
+.pull-right{
+  float: right;
+}
+.container{
+  border-top: 4px solid #8cddcd;
+  box-shadow: 0 2px 1px rgba(0,0,0,.05);
+  margin-bottom: 30px;
+  border-radius: 2px;
+  background-color: #fff;
+
+  .container-header{
+    position: relative;
+    padding: 15px 20px;
+
+    .title{
+      margin-bottom: 0;
+      color: #757575;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+  .container-footer{
+    position: relative;
+    padding: 15px 20px;
+  }
+}
