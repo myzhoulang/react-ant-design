@@ -1,18 +1,37 @@
-.pull-right{
+.pull-right {
   float: right;
 }
-.container{
+
+.clearfix {
+  zoom: 1;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.container {
   border-top: 4px solid #8cddcd;
   box-shadow: 0 2px 1px rgba(0,0,0,.05);
   margin-bottom: 30px;
   border-radius: 2px;
   background-color: #fff;
 
-  .container-header{
+  .container-header {
     position: relative;
     padding: 15px 20px;
+    border-bottom: 1px solid #dedede;
 
-    .title{
+    .sub-title{
+      display: block;
+      margin-top: 5px;
+      color: #9f9f9f;
+      font-size: 13px;
+    }
+
+    .title {
       margin-bottom: 0;
       color: #757575;
       font-size: 16px;
@@ -21,8 +40,15 @@
       display: inline-block;
       margin-right: 10px;
     }
+
+    .container-actions{
+      position: absolute;
+      right:30px;
+      top: 15px;
+    }
   }
-  .container-footer{
+
+  .container-footer {
     position: relative;
     padding: 15px 20px;
   }

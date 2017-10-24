@@ -10,12 +10,17 @@ export default class ContainerHeader extends Component {
 
   render(){
     return (
-      <div className='container-header'>
+      this.props.title ?
+      <div className='container-header clearfix'>
+
         <h5 className='title'>{this.props.title}</h5>
-        <div className='pull-right'>
+
+        { this.props.subTitle ? <span className='sub-title'>{ this.props.subTitle }</span> : null}
+
+        <div className='container-actions'>
           { this.props.actions }
         </div>
-      </div>
+      </div> : null
     )
   }
 }

@@ -5,7 +5,7 @@ import './layout.css'
 
 const SubMenu = Menu.SubMenu
 const MenuItemGroup = Menu.ItemGroup
-const { Header, Sider, Content, Footer } = Layout
+const { Header } = Layout
 
 export default class LayoutHeader extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ export default class LayoutHeader extends Component {
   render() {
     return (
       <Header id="header" style={{ position: 'fixed', width: '100%', zIndex: 2, padding: '0 15px' }}>
-        <Row>
+        <Row type='flex' justify='end'>
           <Col className="gutter-row" span={6}>
             <div className="gutter-box">
               <div className="logo">
@@ -27,12 +27,15 @@ export default class LayoutHeader extends Component {
               />
             </div>
           </Col>
-          <Col span={10}>
+
+          <Col span={8}>
             <div className='gutter-box'></div>
           </Col>
-          <Col className="gutter-row" span={8}>
+
+          <Col className="gutter-row" span={10}>
             <div className="gutter-box" style={{ marginTop: '9px', fontSize: '16px' }}>
               <Menu
+                style={{float:'right'}}
                 theme="dark"
                 mode="horizontal">
                 <Menu.Item key="mail">
@@ -89,4 +92,3 @@ export default class LayoutHeader extends Component {
     )
   }
 }
-
