@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Table, Form, Button, Tag} from 'antd'
+import React, { Component } from 'react'
+import { Table, Form, Button, Tag } from 'antd'
 import MoviesSearchForm from './MoviesSearchForm'
 
 // 搜索表单
@@ -13,7 +13,7 @@ const columns = [
     width: '20%',
     render: text => <a>
         {text
-}
+      }
       </a>
   }, {
     title: '封面',
@@ -49,10 +49,10 @@ const columns = [
     dataIndex: 'genres',
     render: (text) => {
       let tags = text.map((item, index) => <Tag style={{
-        marginBottom: '5px'
-      }} key={item.name} color={tagColors[index]}>
+          marginBottom: '5px'
+        }} key={item.name} color={tagColors[index]}>
         {item.name
-}
+        }
       </Tag>)
       return tags;
     }
@@ -87,7 +87,9 @@ export default class Movies extends Component {
 
   async getMovies(params = {}) {
 
-    this.setState({loaded: true})
+    this.setState({
+      loaded: true
+    })
     let movies
     let {subjects} = await fetch(`/movie/search?q=张艺谋`, {
       method: 'GET',
@@ -101,7 +103,10 @@ export default class Movies extends Component {
       return item
     })
 
-    this.setState({loaded: false, movies: movies})
+    this.setState({
+      loaded: false,
+      movies: movies
+    })
   }
 
   componentWillMount() {
@@ -111,10 +116,17 @@ export default class Movies extends Component {
   render() {
     return (
       <div>
-        <WrappedTimeRelatedForm/>
+        <WrappedTimeRelatedForm />
         <Table style={{
           marginTop: '20px',
           backgroundColor: '#fff',
           padding: '24px'
-        }} columns={columns} dataSource={this.state.movies} loading={this.state.loaded} bordered/>
-        </div>
+        }}
+        columns={columns}
+        dataSource={this.state.movies}
+        loading={this.state.loaded}
+        bordered />
+      </div>
+    )
+  }
+}

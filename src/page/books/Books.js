@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Table, Form, Button, Tag} from 'antd'
+import React, { Component } from 'react'
+import { Table, Form, Button, Tag } from 'antd'
 import SearchForm from './BooksSearchForm'
 
 const WrappedTimeRelatedForm = Form.create()(SearchForm)
@@ -52,8 +52,8 @@ const columns = [
     dataIndex: 'tags',
     render: (text) => {
       let tags = text.map((item, index) => <Tag style={{
-        marginBottom: '5px'
-      }} key={item.name} color={tagColors[index]}>{item.name}</Tag>)
+          marginBottom: '5px'
+        }} key={item.name} color={tagColors[index]}>{item.name}</Tag>)
       return tags;
     }
   }, {
@@ -75,7 +75,9 @@ export default class Log extends Component {
 
   // 获取列表
   async getSystemLogs(params = {}) {
-    this.setState({loaded: true})
+    this.setState({
+      loaded: true
+    })
     let {books} = await fetch(`/book/search?q=python&fields=id,title,rating,url,image,author,price,pubdate,tags`, {
       method: 'GET',
       headers: {
@@ -88,7 +90,10 @@ export default class Log extends Component {
       return item
     })
 
-    this.setState({loaded: false, books: books})
+    this.setState({
+      loaded: false,
+      books: books
+    })
   }
 
   componentWillMount() {
@@ -100,10 +105,10 @@ export default class Log extends Component {
       <div>
         <WrappedTimeRelatedForm/>
         <Table style={{
-          marginTop: '20px',
-          backgroundColor: '#fff',
-          padding: '24px'
-        }} columns={columns} dataSource={this.state.books} loading={this.state.loaded} bordered/>
+        marginTop: '20px',
+        backgroundColor: '#fff',
+        padding: '24px'
+      }} columns={columns} dataSource={this.state.books} loading={this.state.loaded} bordered/>
       </div>
     )
   }
